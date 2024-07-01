@@ -1,6 +1,22 @@
 #lotto number를 생성하는 프로그램
 #1 ~ 46사이의 숫자 중 6개의 숫자가 필요합니다.
 
+import random
+def lot_num():
+    num = random.randint(1,45)
+    return num
+lotto_number = []
+cnt = 0
+
+while True:
+    if cnt > 5: #0,1,2,3,4,5까지 6개 숫자
+        break #6개의 중복 없는 숫자가 나오면 탈출
+    random_number = lot_num()
+    if random_number not in lotto_number: #뽑은 숫자가 중복이 아니면
+        lotto_number.append(random_number) #리스트에 추가
+        cnt += 1 #탈출해야 하니까 조건을 다 충족했을 때 count 하나 높임
+    
+print(lotto_number)    
 
 
 
@@ -94,7 +110,7 @@ num = int(input("입력 값 : "))
 result = square(num)
 print("제곱값 : ", result)
 '''
-
+'''
 def get_max(a,b):
 
     if n1 > n2 :
@@ -109,6 +125,6 @@ n1 = int(input("값1 : "))
 n2 = int(input("값2 : "))
 result = get_max(n1,n2)    
 print(result)
-    
+'''   
         
 
